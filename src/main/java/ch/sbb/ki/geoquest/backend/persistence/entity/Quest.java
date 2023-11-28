@@ -1,4 +1,4 @@
-package ch.sbb.ki.geoquest.backend.persistence;
+package ch.sbb.ki.geoquest.backend.persistence.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
