@@ -1,7 +1,7 @@
 
 spring:
   datasource:
-    url: jdbc:postgresql://flora.db.elephantsql.com/rgxmbixh
-    username: "..." # do not commit
+    url: jdbc:postgresql://postgresql-hackathon-geoquest.alwaysdata.net:5432/hackathon-geoquest_0
+    username: hackathon-geoquest
     password: "..." # do not commit
 
