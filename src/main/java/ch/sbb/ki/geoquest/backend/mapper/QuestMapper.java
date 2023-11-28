@@ -9,10 +9,9 @@ import java.util.List;
 
 @Mapper(componentModel = "spring", uses = {PlaceMapper.class, TrackMapper.class})
 public interface QuestMapper {
-    @Mapping(target = "instruction", source = "instructions")
-    @Mapping(target = "location", source = "place")
-    @Mapping(target = "startTrack", source = "transferFrom")
     List<QuestDTO> map(List<Quest> quests);
 
+    @Mapping(target = "instruction", source = "instructions")
+    @Mapping(target = "location", source = "place")
     QuestDTO map(Quest quest);
 }
