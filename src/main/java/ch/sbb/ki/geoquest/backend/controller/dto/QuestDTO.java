@@ -1,11 +1,13 @@
 package ch.sbb.ki.geoquest.backend.controller.dto;
 
 import ch.sbb.ki.geoquest.backend.persistence.entity.TransactionType;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Value;
 
 import java.util.Date;
 
 @Value
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class QuestDTO {
     Long id;
     TransactionType type;
@@ -16,7 +18,7 @@ public class QuestDTO {
     Integer baseReward;
     Date startDate;
     Date endDate;
-    TrackDTO transferFrom;
-    TrackDTO transferTo;
+    TrackDTO startTrack;
+    TrackDTO endTrack;
     TrackDTO platform;
 }

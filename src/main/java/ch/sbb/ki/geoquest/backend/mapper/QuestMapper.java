@@ -13,5 +13,7 @@ public interface QuestMapper {
 
     @Mapping(target = "instruction", source = "instructions")
     @Mapping(target = "location", source = "place")
+    @Mapping(target = "startTrack", source = "transferFrom")
+    @Mapping(target = "endTrack", source = "transferTo")
     QuestDTO map(Quest quest);
 }
