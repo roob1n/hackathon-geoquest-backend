@@ -10,13 +10,13 @@ public class QuestDTO {
     Long id;
     TransactionType type;
     String title;
-    String instructions;
-    PlaceDTO place;
+    String instruction;
+    PlaceDTO location;
     Integer minResponses;
     Integer baseReward;
     Date startDate;
     Date endDate;
-    String transferFrom;
-    String transferTo;
-    String platform;
+    TrackDTO transferFrom;
+    TrackDTO transferTo;
+    TrackDTO platform;
 }

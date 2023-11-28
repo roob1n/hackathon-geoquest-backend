@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/quests") // Base URL for quest-related operations
+@RequestMapping("/quests")
 @RequiredArgsConstructor
 public class QuestController {
 

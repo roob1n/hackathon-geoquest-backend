@@ -2,17 +2,14 @@ package ch.sbb.ki.geoquest.backend.mapper;
 
 import ch.sbb.ki.geoquest.backend.controller.dto.PlaceDTO;
 import ch.sbb.ki.geoquest.backend.persistence.entity.Place;
-import org.geolatte.geom.G2D;
-import org.geolatte.geom.Point;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = PointMapper.class)
 interface PlaceMapper {
     List<PlaceDTO> map(List<Place> places);
+    @Mapping(target = "point", source = "location")
     PlaceDTO map(Place place);
-    default String map(Point<G2D> point) {
-        return point.toString();
-    }
 }
