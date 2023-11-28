@@ -1,0 +1,7 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://flora.db.elephantsql.com/rgxmbixh
+    username: "..." # do not commit
+    password: "..." # do not commit
+
