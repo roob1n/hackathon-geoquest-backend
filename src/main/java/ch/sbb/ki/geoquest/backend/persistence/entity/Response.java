@@ -8,8 +8,8 @@ import lombok.Data;
 import org.geolatte.geom.G2D;
 import org.geolatte.geom.Point;
 
-@Entity
 @Data
+@Entity
 public class Response {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

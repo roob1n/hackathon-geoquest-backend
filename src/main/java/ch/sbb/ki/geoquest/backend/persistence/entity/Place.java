@@ -5,10 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
 import org.geolatte.geom.G2D;
 import org.geolatte.geom.Point;
 
 
+@Data
 @Entity
 public class Place {
     @Id
