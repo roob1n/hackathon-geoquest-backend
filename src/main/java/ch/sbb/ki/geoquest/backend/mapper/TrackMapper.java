@@ -4,12 +4,12 @@ import ch.sbb.ki.geoquest.backend.controller.dto.TrackDTO;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
-interface TrackMapper {
-    default TrackDTO map(String sloid) {
-        return new TrackDTO(sloid, "Haltekante %s".formatted(getHaltekante(sloid)));
+abstract class TrackMapper {
+    public TrackDTO map(String sloid) {
+        return sloid == null ? null : new TrackDTO(sloid, "Haltekante %s".formatted(getHaltekante(sloid)));
     }
 
-    default String getHaltekante(String sloid) {
+    private String getHaltekante(String sloid) {
         final String[] parts = sloid.split(":");
         return parts.length >= 6 ? parts[5] : "unknown";
     }
