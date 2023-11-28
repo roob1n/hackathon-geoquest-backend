@@ -13,7 +13,7 @@ CREATE TABLE place
 (
     ID           SERIAL PRIMARY KEY,
     location     GEOMETRY(Point, 4326) NOT NULL,
-    sloid        UUID,
+    sloid        VARCHAR(255),
     display_name VARCHAR(255)
 );
 
@@ -51,3 +51,22 @@ CREATE TABLE response (
                           FOREIGN KEY (quest_id) REFERENCES quest(ID),
                           FOREIGN KEY (user_id) REFERENCES users(ID)
 );
+
+INSERT INTO place (location, sloid, display_name)
+VALUES
+    (ST_GeomFromText('POINT(8.31018320694279 47.0501778280856)', 4326), 'ch:1:sloid:5000', 'Luzern'),
+    (ST_GeomFromText('POINT(7.439130889923935 46.948832290498416)', 4326), 'ch:1:sloid:7000', 'Bern'),
+    (ST_GeomFromText('POINT(8.54169438364029 47.3768866)', 4326), 'ch:1:sloid:3000', 'Zürich'),
+    (ST_GeomFromText('POINT(7.5885761 47.5595986)', 4326), 'ch:1:sloid:10', 'Basel'),
+    (ST_GeomFromText('POINT(6.1431577 46.2044)', 4326), 'ch:1:sloid:1008', 'Genève'),
+    (ST_GeomFromText('POINT(8.5167244 47.1724)', 4326), 'ch:1:sloid:2204', 'Zug'),
+    (ST_GeomFromText('POINT(9.532007 46.8523)', 4326), 'ch:1:sloid:9000', 'Chur'),
+    (ST_GeomFromText('POINT(7.9045969 47.3526)', 4326), 'ch:1:sloid:218', 'Olten');
+
+INSERT INTO users (user_name, is_admin, score)
+VALUES
+    ('GandalfTheJoker', true, 0),
+    ('WookieLaughs', false, 0),
+    ('HobbitHumorist', false, 0),
+    ('TrekkieTickler', false, 0),
+    ('DumbledoreGiggles', false, 0);
