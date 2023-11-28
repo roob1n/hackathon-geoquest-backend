@@ -6,6 +6,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 import java.util.Date;
@@ -20,7 +22,9 @@ public class Quest {
 	private TransactionType type;
 	private String title;
 	private String instructions;
-	private Integer placeId;
+	@ManyToOne
+	@JoinColumn(name = "place_id")
+	private Place place;
 	private Integer minResponses;
 	private Integer baseReward;
 	private Date startDate;
