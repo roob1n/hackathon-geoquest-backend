@@ -1,3 +1,6 @@
+-- jdbc:postgresql://postgresql-hackathon-geoquest.alwaysdata.net:5432/hackathon-geoquest_0
+-- user: hackathon-geoquest
+
 DROP TABLE IF EXISTS response;
 DROP TABLE IF EXISTS quest;
 DROP TABLE IF EXISTS users;
