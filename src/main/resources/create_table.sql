@@ -73,11 +73,11 @@ VALUES
 
 INSERT INTO quest (type, title, instructions, place_id, min_responses, base_reward, start_date, end_date, transfer_from, transfer_to, platform)
 VALUES
-    ('TRANSFER', 'Luzern Adventure', 'Find the hidden gem in Luzern', 1, 3, 100, '2023-06-01', '2023-06-10', 'User1', 'User2', 'App'),
-    ('PLATFORM', 'Bern Treasure Hunt', 'Solve the mystery in Bern', 2, 5, 150, '2023-07-01', '2023-07-15', 'User3', 'User4', 'Website'),
-    ('TRANSFER', 'Zürich Discovery', 'Explore the streets of Zürich', 3, 2, 80, '2023-08-01', '2023-08-10', 'User5', 'User6', 'Mobile'),
-    ('PLATFORM', 'Basel Exploration', 'Uncover the history in Basel', 4, 4, 120, '2023-09-01', '2023-09-20', 'User7', 'User8', 'App'),
-    ('TRANSFER', 'Genève Quest', 'Discover the secrets of Genève', 5, 3, 110, '2023-10-01', '2023-10-10', 'User9', 'User10', 'Website'),
-    ('PLATFORM', 'Zug Adventure', 'Find the Zug’s hidden spots', 6, 3, 90, '2023-11-01', '2023-11-15', 'User11', 'User12', 'Mobile'),
-    ('TRANSFER', 'Chur Challenge', 'Take on the Chur challenge', 7, 2, 100, '2023-12-01', '2023-12-10', 'User13', 'User14', 'App'),
-    ('PLATFORM', 'Olten Odyssey', 'Embark on the Olten journey', 8, 4, 130, '2024-01-01', '2024-01-20', 'User15', 'User16', 'Website');
+    ('TRANSFER', 'Luzern Adventure', 'Find the hidden gem in Luzern', 1, 3, 100, '2023-06-01', '2023-06-10', null, null, null),
+    ('PLATFORM', 'Bern Treasure Hunt', 'Solve the mystery in Bern', 2, 5, 150, '2023-07-01', '2023-07-15', null, null, null),
+    ('TRANSFER', 'Zürich Discovery', 'Explore the streets of Zürich', 3, 2, 80, '2023-08-01', '2023-08-10', null, null, null),
+    ('PLATFORM', 'Basel Exploration', 'Uncover the history in Basel', 4, 4, 120, '2023-09-01', '2023-09-20', null, null, null),
+    ('TRANSFER', 'Genève Quest', 'Discover the secrets of Genève', 5, 3, 110, '2023-10-01', '2023-10-10', null, null, null),
+    ('PLATFORM', 'Zug Adventure', 'Find the Zug’s hidden spots', 6, 3, 90, '2023-11-01', '2023-11-15', null, null, null),
+    ('TRANSFER', 'Chur Challenge', 'Take on the Chur challenge', 7, 2, 100, '2023-12-01', '2023-12-10', null, null, null),
+    ('PLATFORM', 'Olten Odyssey', 'Embark on the Olten journey', 8, 4, 130, '2024-01-01', '2024-01-20', null, null, null);
