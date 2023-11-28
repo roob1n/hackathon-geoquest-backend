@@ -1,0 +1,8 @@
+# this profile makes sure that the default profile for any test is always 'test',
+# even if you don't specify @ActiveProfiles("test")
+# For further explanations, see https://stackoverflow.com/a/66324710/349169
+
+# for testing, set default profile to 'test'
+spring.profiles.active: "test"
+# and import the 'main' properties
+spring.config.import: file:src/main/resources/application.yml

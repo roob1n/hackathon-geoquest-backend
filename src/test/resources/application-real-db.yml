@@ -1,0 +1,3 @@
+spring:
+  datasource:
+  # using the real DBs for PostGIS.
