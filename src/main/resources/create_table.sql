@@ -61,11 +61,11 @@ VALUES
     ('TRANSFER', 'Chur Challenge', 'Take on the Chur challenge', 38734, 2, 100, '2023-12-01', '2023-12-10', 'ch:1:sloid:9000:1:1'	, 'ch:1:sloid:9000:1:4'	, null),
     ('TRANSFER', 'Olten Odyssey', 'Embark on the Olten journey',33325, 4, 130, '2024-01-01', '2024-01-20', 'ch:1:sloid:218:1:1'	, 'ch:1:sloid:218:1:11'	, null),
     ('PLATFORM', 'Zytglogge F', 'check the locatoin', 42067, 4, 130, '2024-01-01', '2024-01-20', NULL	, null	, 'ch:1:sloid:7110:0:2'	),
-    ('TRANSFER','Bern Wankdorf,36493,4,130,'2023-11-01','2023-12-03','ch:1:sloid:16161:2:3','ch:1:sloid:90129:0:2',null),
-    ('TRANSFER','Bern,31436,4,130,'2023-11-01','2023-12-03','ch:1:sloid:7000:500:21','ch:1:sloid:76646:0:5',null),
-    ('TRANSFER','Bern,31436,4,130,'2023-11-01','2023-12-03','ch:1:sloid:7000:500:21','ch:1:sloid:81351:0:64472',null),
-    ('TRANSFER','Bern,31436,4,130,'2023-11-01','2023-12-03','ch:1:sloid:7000:500:21','ch:1:sloid:7785:0:367530',null),
-    ('TRANSFER','Bern,31436,4,130,'2023-11-01','2023-12-03','ch:1:sloid:7000:500:21','ch:1:sloid:30257:0:497737',null),
-    ('PLATFORM','Bern, Güterbahnhof,14222,4,130,'2023-11-01','2023-12-03',null,null,'ch:1:sloid:90025:0:19199'),
-    ('PLATFORM','Bern, Güterbahnhof,14222,4,130,'2023-11-01','2023-12-03',null,null,'ch:1:sloid:90025:0:9060');
+    ('TRANSFER','Bern Wankdorf',36493,4,130,'2023-11-01','2023-12-03','ch:1:sloid:16161:2:3','ch:1:sloid:90129:0:2',null),
+    ('TRANSFER','Bern',31436,4,130,'2023-11-01','2023-12-03','ch:1:sloid:7000:500:21','ch:1:sloid:76646:0:5',null),
+    ('TRANSFER','Bern',31436,4,130,'2023-11-01','2023-12-03','ch:1:sloid:7000:500:21','ch:1:sloid:81351:0:64472',null),
+    ('TRANSFER','Bern',31436,4,130,'2023-11-01','2023-12-03','ch:1:sloid:7000:500:21','ch:1:sloid:7785:0:367530',null),
+    ('TRANSFER','Bern',31436,4,130,'2023-11-01','2023-12-03','ch:1:sloid:7000:500:21','ch:1:sloid:30257:0:497737',null),
+    ('PLATFORM','Bern, Güterbahnhof',14222,4,130,'2023-11-01','2023-12-03',null,null,'ch:1:sloid:90025:0:19199'),
+    ('PLATFORM','Bern, Güterbahnhof',14222,4,130,'2023-11-01','2023-12-03',null,null,'ch:1:sloid:90025:0:9060');
 
