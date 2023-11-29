@@ -22,7 +22,7 @@ CREATE TABLE quest
     type          VARCHAR(20) NOT NULL,
     title         VARCHAR(255),
     instructions  TEXT,
-    place_id      INTEGER,
+    place_id      INTEGER NOT NULL,
     min_responses INT,
     base_reward   INT,
     start_date    DATE,
