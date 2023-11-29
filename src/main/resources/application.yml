@@ -4,4 +4,11 @@ spring:
     url: jdbc:postgresql://postgresql-hackathon-geoquest.alwaysdata.net:5432/hackathon-geoquest_0
     username: hackathon-geoquest
     password: "..." # do not commit
+    
+    max-active: 3
+    hikari:
+      maximum-pool-size: 3
 
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    #show-sql: true
