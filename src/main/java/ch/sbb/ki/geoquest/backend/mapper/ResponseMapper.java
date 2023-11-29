@@ -1,7 +1,5 @@
 package ch.sbb.ki.geoquest.backend.mapper;
 
-import ch.sbb.ki.geoquest.backend.controller.dto.QuestDTO;
-import ch.sbb.ki.geoquest.backend.controller.dto.ResponseDTO;
 import ch.sbb.ki.geoquest.backend.controller.dto.ResponseDetailedDTO;
 import ch.sbb.ki.geoquest.backend.persistence.entity.Response;
 import org.mapstruct.Mapper;

@@ -29,6 +29,7 @@ public class QuestAdminController {
         return questMapper.map(questRepository.findAll());
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public List<ResponseDetailedDTO> getQuestById(@PathVariable("id") Long id) {
 
