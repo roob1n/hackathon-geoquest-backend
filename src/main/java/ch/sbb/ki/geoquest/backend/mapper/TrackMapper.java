@@ -9,6 +9,14 @@ abstract class TrackMapper {
         return sloid == null ? null : new TrackDTO(sloid, "Haltekante %s".formatted(getHaltekante(sloid)));
     }
 
+    public String map(TrackDTO trackDTO) {
+        if(trackDTO != null) {
+            return trackDTO.getSloid();
+        } else {
+            return null;
+        }
+    }
+
     private String getHaltekante(String sloid) {
         final String[] parts = sloid.split(":");
         return parts.length >= 6 ? parts[5] : "unknown";

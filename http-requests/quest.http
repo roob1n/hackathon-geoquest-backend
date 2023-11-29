@@ -1,2 +1,22 @@
 ###
 GET localhost:8080/quests
+
+###
+GET localhost:8080/admin/quests
+
+###
+POST localhost:8080/admin/quests
+Content-Type: application/json
+
+{
+  "type": "PLATFORM",
+  "title": "Sample Quest",
+  "instructions": "Complete the quest!",
+  "minResponses": 15,
+  "baseReward": 100,
+  "startDate": "2023-01-01",
+  "endDate": "2023-02-01",
+  "transferFrom": null,
+  "transferTo": null,
+  "platform": "ch:1:sloid:1000"
+}
