@@ -4,18 +4,9 @@
 DROP TABLE IF EXISTS response;
 DROP TABLE IF EXISTS quest;
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS place;
 DROP TYPE IF EXISTS transaction_type;
 
 CREATE TYPE transaction_type AS ENUM ('TRANSFER', 'PLATFORM');
-
-CREATE TABLE place
-(
-    ID           SERIAL PRIMARY KEY,
-    location     GEOMETRY(Point, 4326) NOT NULL,
-    sloid        VARCHAR(255),
-    display_name VARCHAR(255)
-);
 
 CREATE TABLE users
 (
@@ -46,22 +37,11 @@ CREATE TABLE response (
                           ID SERIAL PRIMARY KEY,
                           quest_id INT,
                           user_id INT,
-                          transfer_time INT, -- Assuming this is in seconds
-                          platform_location POINT,
+                          transfer_time INT,
+                          platform_location GEOMETRY(Point, 4326),
                           FOREIGN KEY (quest_id) REFERENCES quest(ID),
                           FOREIGN KEY (user_id) REFERENCES users(ID)
 );
-
-INSERT INTO place (location, sloid, display_name)
-VALUES
-    (ST_GeomFromText('POINT(8.31018320694279 47.0501778280856)', 4326), 'ch:1:sloid:5000', 'Luzern'),
-    (ST_GeomFromText('POINT(7.439130889923935 46.948832290498416)', 4326), 'ch:1:sloid:7000', 'Bern'),
-    (ST_GeomFromText('POINT(8.54169438364029 47.3768866)', 4326), 'ch:1:sloid:3000', 'Zürich'),
-    (ST_GeomFromText('POINT(7.5885761 47.5595986)', 4326), 'ch:1:sloid:10', 'Basel'),
-    (ST_GeomFromText('POINT(6.1431577 46.2044)', 4326), 'ch:1:sloid:1008', 'Genève'),
-    (ST_GeomFromText('POINT(8.5167244 47.1724)', 4326), 'ch:1:sloid:2204', 'Zug'),
-    (ST_GeomFromText('POINT(9.532007 46.8523)', 4326), 'ch:1:sloid:9000', 'Chur'),
-    (ST_GeomFromText('POINT(7.9045969 47.3526)', 4326), 'ch:1:sloid:218', 'Olten');
 
 INSERT INTO users (user_name, is_admin, score)
 VALUES
@@ -73,11 +53,11 @@ VALUES
 
 INSERT INTO quest (type, title, instructions, place_id, min_responses, base_reward, start_date, end_date, transfer_from, transfer_to, platform)
 VALUES
-    ('TRANSFER', 'Luzern Adventure', 'Find the hidden gem in Luzern', 1, 3, 100, '2023-06-01', '2023-06-10', 'ch:1:sloid:76646:0:10', 'ch:1:sloid:76646:0:10', null),
-    ('PLATFORM', 'Bern Treasure Hunt', 'Solve the mystery in Bern', 2, 5, 150, '2023-07-01', '2023-07-15', null, null, 'ch:1:sloid:76646:0:10'),
-    ('TRANSFER', 'Zürich Discovery', 'Explore the streets of Zürich', 3, 2, 80, '2023-08-01', '2023-08-10', 'ch:1:sloid:76646:0:10', 'ch:1:sloid:76646:0:10', null),
-    ('PLATFORM', 'Basel Exploration', 'Uncover the history in Basel', 4, 4, 120, '2023-09-01', '2023-09-20', null, null, 'ch:1:sloid:76646:0:10'),
-    ('TRANSFER', 'Genève Quest', 'Discover the secrets of Genève', 5, 3, 110, '2023-10-01', '2023-10-10', 'ch:1:sloid:76646:0:10', 'ch:1:sloid:76646:0:10', null),
-    ('PLATFORM', 'Zug Adventure', 'Find the Zug’s hidden spots', 6, 3, 90, '2023-11-01', '2023-11-15', null, null, 'ch:1:sloid:76646:0:10'),
-    ('TRANSFER', 'Chur Challenge', 'Take on the Chur challenge', 7, 2, 100, '2023-12-01', '2023-12-10', 'ch:1:sloid:76646:0:10', 'ch:1:sloid:76646:0:10', null),
-    ('PLATFORM', 'Olten Odyssey', 'Embark on the Olten journey', 8, 4, 130, '2024-01-01', '2024-01-20', null, null, 'ch:1:sloid:76646:0:10');
+    ('TRANSFER', 'Luzern Adventure', 'Find the hidden gem in Luzern', 1, 3, 100, '2023-06-01', '2023-06-10', 'ch:1:sloid:5000:1:3', 'ch:1:sloid:5000:3:7', null),
+    ('TRANSFER', 'Bern Treasure Hunt', 'Solve the mystery in Bern', 2, 5, 150, '2023-07-01', '2023-07-15', 'ch:1:sloid:7000:1:21'	, 'ch:1:sloid:7000:55:50'	, null),
+    ('TRANSFER', 'Zürich Discovery', 'Explore the streets of Zürich', 3, 2, 80, '2023-08-01', '2023-08-10', 'ch:1:sloid:3000:500:31'	, 'ch:1:sloid:3000:10:18'	, null),
+    ('TRANSFER', 'Basel Exploration', 'Uncover the history in Basel', 4, 4, 120, '2023-09-01', '2023-09-20', 'ch:1:sloid:10:0:20'	, 'ch:1:sloid:10:0:1'	, null),
+    ('TRANSFER', 'Zug Adventure', 'Find the Zug’s hidden spots', 6, 3, 90, '2023-11-01', '2023-11-15', 'ch:1:sloid:2204:1:1', 'ch:1:sloid:2204:1:7', null),
+    ('TRANSFER', 'Chur Challenge', 'Take on the Chur challenge', 7, 2, 100, '2023-12-01', '2023-12-10', 'ch:1:sloid:9000:1:1'	, 'ch:1:sloid:9000:1:4'	, null),
+    ('TRANSFER', 'Olten Odyssey', 'Embark on the Olten journey', 8, 4, 130, '2024-01-01', '2024-01-20', 'ch:1:sloid:218:1:1'	, 'ch:1:sloid:218:1:11'	, null),
+    ('PLATFORM', 'Zytglogge F', 'check the locatoin', 8, 4, 130, '2024-01-01', '2024-01-20', NULL	, null	, 'ch:1:sloid:7110:0:2'	);
