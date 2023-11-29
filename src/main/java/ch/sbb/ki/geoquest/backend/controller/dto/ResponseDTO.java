@@ -5,9 +5,8 @@ import lombok.Value;
 
 @Value
 public class ResponseDTO {
-
     TransactionType type;
-    String userId;
+    Long userId;
     Long questId;
     int timeInSeconds;
     PointDTO point;

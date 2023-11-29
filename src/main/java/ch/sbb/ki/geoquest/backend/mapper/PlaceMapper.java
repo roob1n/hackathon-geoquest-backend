@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring", uses = PointMapper.class)
-interface PlaceMapper {
+public interface PlaceMapper {
     @Mapping(target = "point", source = "location")
     PlaceDTO map(Place place);
 }
