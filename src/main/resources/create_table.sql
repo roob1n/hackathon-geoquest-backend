@@ -18,8 +18,8 @@ CREATE TABLE users
 
 CREATE TABLE quest
 (
-    ID            SERIAL PRIMARY KEY,
-    Type          transaction_type NOT NULL,
+    id            SERIAL PRIMARY KEY,
+    type          VARCHAR(20) NOT NULL,
     title         VARCHAR(255),
     instructions  TEXT,
     place_id      INTEGER,
@@ -34,7 +34,7 @@ CREATE TABLE quest
 );
 
 CREATE TABLE response (
-                          ID SERIAL PRIMARY KEY,
+                          id SERIAL PRIMARY KEY,
                           quest_id INT,
                           user_id INT,
                           transfer_time INT,

@@ -13,6 +13,6 @@ public interface PointMapper {
     }
 
     default Point<G2D> map(PointDTO pointDTO) {
-        return new Point<>(new G2D(pointDTO.getLat(), pointDTO.getLon()), CoordinateReferenceSystems.WGS84);
+        return pointDTO == null ? null : new Point<>(new G2D(pointDTO.getLat(), pointDTO.getLon()), CoordinateReferenceSystems.WGS84);
     }
 }
