@@ -1,0 +1,25 @@
+###
+POST localhost:8080/response
+Content-Type: application/json
+
+{
+    "type": "PLATFORM",
+    "userId": 1,
+    "questId": 1,
+    "timeInSeconds": 42
+}
+
+###
+POST localhost:8080/response
+Content-Type: application/json
+
+{
+  "type": "PLATFORM",
+  "userId": 1,
+  "questId": 1,
+  "point": {
+    "lat": 41.456,
+    "lon": 7.123
+  }
+}
+
