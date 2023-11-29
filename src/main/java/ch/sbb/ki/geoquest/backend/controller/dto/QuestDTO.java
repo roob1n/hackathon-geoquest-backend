@@ -4,7 +4,9 @@ import ch.sbb.ki.geoquest.backend.persistence.entity.TransactionType;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Value;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Value
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,4 +23,5 @@ public class QuestDTO {
     TrackDTO startTrack;
     TrackDTO endTrack;
     TrackDTO platform;
+    List<ResponseDTO> responses = new ArrayList<>();
 }
