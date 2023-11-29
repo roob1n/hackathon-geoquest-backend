@@ -9,7 +9,7 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface PointMapper {
     default PointDTO map(Point<G2D> point) {
-        return new PointDTO(point.getPosition().getLat(), point.getPosition().getLon());
+        return point == null ? null : new PointDTO(point.getPosition().getLat(), point.getPosition().getLon());
     }
 
     default Point<G2D> map(PointDTO pointDTO) {
