@@ -16,4 +16,5 @@ public class QuestSearchCriteria {
     private Date date;
     @Builder.Default
     private boolean onlyNotEnoughResponses = false;
+    private Long noResponseFromUserId;
 }
