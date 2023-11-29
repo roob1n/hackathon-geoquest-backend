@@ -12,6 +12,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.criteria.Expression;
 import jakarta.persistence.criteria.ParameterExpression;
+import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.Subquery;
 
 public class QuestRepositoryCustomImpl implements QuestRepositoryCustom {
 
@@ -26,6 +28,7 @@ public class QuestRepositoryCustomImpl implements QuestRepositoryCustom {
         searcher.location(searchCriteria.getLocation(), searchCriteria.getRadius());
         searcher.date(searchCriteria.getDate());
         searcher.onlyNotEnoughResponses(searchCriteria.isOnlyNotEnoughResponses());
+        searcher.noResponseFrom(searchCriteria.getNoResponseFromUserId());
         return searcher.getAndBasedQuery().getResultList();
     }
 
@@ -72,6 +75,22 @@ public class QuestRepositoryCustomImpl implements QuestRepositoryCustom {
                     rootEntity.get("minResponses"), 
                     count(Response.class, response -> response.join("quest"), quest -> quest.get("id"))
                 ));
+            }
+        }
+
+        void noResponseFrom(Long userId) {
+            if (userId != null) {
+                Subquery<Response> subquery = query.subquery(Response.class);
+                Root<Response> subroot = subquery.from(Response.class);
+                subquery.select(subroot).where(criteriaBuilder.and(
+                        criteriaBuilder.equal(
+                            subroot.get("quest"),
+                            rootEntity),
+                        criteriaBuilder.equal(
+                            subroot.get("user").get("id"), 
+                            criteriaBuilder.literal(userId))
+                        ));
+                criteria.add(criteriaBuilder.not(criteriaBuilder.exists(subquery)));
             }
         }
     }
