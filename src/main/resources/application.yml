@@ -3,8 +3,7 @@ spring:
   datasource:
     url: jdbc:postgresql://postgresql-hackathon-geoquest.alwaysdata.net:5432/hackathon-geoquest_0
     username: hackathon-geoquest
-    password: "..." # do not commit
-    
+    password: ${DATA_PASS:overridewithenv} # do not commi
     max-active: 3
     hikari:
       maximum-pool-size: 3
