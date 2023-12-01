@@ -3,14 +3,14 @@
 *.pyc
 __pycache__
 
-# Environments 
-.env 
-.venv 
-env/ 
-venv/ 
-ENV/ 
-env.bak/ 
-venv.bak/ 
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
 HELP.md
 target/
@@ -45,3 +45,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Secret Env Variables ###
+/src/main/resources/config/application.yml
